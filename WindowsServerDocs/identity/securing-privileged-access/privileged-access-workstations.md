@@ -76,7 +76,7 @@ In this scenario, a PAW is used for administration that is completely separate f
 
 In this simultaneous use scenario, a single PC is used for both administration tasks and daily activities like email, document editing, and development work. In this configuration, the user operating system is available while disconnected (for editing documents and working on locally cached email), but requires hardware and support processes that can accommodate this disconnected state.
 
-![Diagram showing single PC  in a simultaneous use scenario used for both administration tasks and daily activities like email, document editing, and development work](../media/privileged-access-workstations/PAWFig10.JPG)
+![Diagram showing single PC  in a simultaneous use scenario used for both administration tasks and daily activities like email, document editing, and development work](../media/Privileged-Access-Workstations/PAWFig10.JPG)
 
 The physical hardware runs two operating systems locally:
 
@@ -95,7 +95,7 @@ Read [Client Hyper-V](/virtualization/hyper-v-on-windows/index) article for more
 
 In this simultaneous use scenario, a single PC is used for both administration tasks and daily activities like email, document editing and development work. In this configuration, the user operating systems are deployed and managed centrally (on the cloud or in your datacenter), but aren't available while disconnected.
 
-![Figure showing a single PC in a simultaneous use scenario used for both administration tasks and daily activities like email, document editing and development work](../media/privileged-access-workstations/PAWFig11.JPG)
+![Figure showing a single PC in a simultaneous use scenario used for both administration tasks and daily activities like email, document editing and development work](../media/Privileged-Access-Workstations/PAWFig11.JPG)
 
 The physical hardware runs a single PAW operating system locally for administrative tasks and contacts a Microsoft or 3rd party remote desktop service for user applications such as email, document editing, and line of business applications.
 
@@ -121,7 +121,7 @@ For more details on the ESAE administrative forest, see the *ESAE Administrative
 
 The diagram below depicts a separate "channel" for administration (a highly sensitive task) that is created by maintaining separate dedicated administrative accounts and workstations.
 
-![Diagram showing a separate "channel" for administration (a highly sensitive task) that is created by maintaining separate dedicated administrative accounts and workstations](../media/privileged-access-workstations/PAWFig1.JPG)
+![Diagram showing a separate "channel" for administration (a highly sensitive task) that is created by maintaining separate dedicated administrative accounts and workstations](../media/Privileged-Access-Workstations/PAWFig1.JPG)
 
 This architectural approach builds on the protections found in the Windows 10 [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) and [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) features and goes beyond those protections for sensitive accounts and tasks.
 
@@ -147,7 +147,7 @@ The current threat environment for organizations is rife with sophisticated phis
 
 This threat environment requires organizations to adopt an "assume breach" security posture when designing protections for high value assets like administrative accounts and sensitive business assets. These high value assets need to be protected against both direct internet threats as well as attacks mounted from other workstations, servers, and devices in the environment.
 
-![Figure showing the risk to managed assets if an attacker gains control of a user workstation where sensitive credentials are used](../media/privileged-access-workstations/PAWFig2.JPG)
+![Figure showing the risk to managed assets if an attacker gains control of a user workstation where sensitive credentials are used](../media/Privileged-Access-Workstations/PAWFig2.JPG)
 
 This figure depicts risk to managed assets if an attacker gains control of a user workstation where sensitive credentials are used.
 
@@ -182,7 +182,7 @@ The diagram below depicts the ability of attackers to follow the control chain t
 
 The PAW architecture does not allow for hosting an Admin VM on a User Workstation, but a User VM with a standard corporate image can be hosted on an Admin PAW to provide personnel with a single PC for all responsibilities.
 
-![Diagram of the PAW architecture](../media/privileged-access-workstations/PAWFig9.JPG)
+![Diagram of the PAW architecture](../media/Privileged-Access-Workstations/PAWFig9.JPG)
 
 #### Shielded VM-based PAWs
 
@@ -202,13 +202,13 @@ Administrative "Jump Server" architectures set up a small number administrative 
 
 This approach is frequently proposed to mitigate risk to administration and does provide some security assurances, but the jump server approach by itself is vulnerable to certain attacks because it violates the ["clean source" principle](../securing-privileged-access/securing-privileged-access-reference-material.md#clean-source-principle). The clean source principle requires all security dependencies to be as trustworthy as the object being secured.
 
-![Figure showing a simple control relationship](../media/privileged-access-workstations/PAWFig3.JPG)
+![Figure showing a simple control relationship](../media/Privileged-Access-Workstations/PAWFig3.JPG)
 
 This figure depicts a simple control relationship. Any subject in control of an object is a security dependency of that object. If an adversary can control a security dependency of a target object (subject), they can control that object.
 
 The administrative session on the jump server relies on the integrity of the local computer accessing it. If this computer is a user workstation subject to phishing attacks and other internet-based attack vectors, then the administrative session is also subject to those risks.
 
-![Figure showing how attackers can follow an established control chain to the target object of interest](../media/privileged-access-workstations/PAWFig4.JPG)
+![Figure showing how attackers can follow an established control chain to the target object of interest](../media/Privileged-Access-Workstations/PAWFig4.JPG)
 
 The figure above depicts how attackers can follow an established control chain to the target object of interest.
 
@@ -216,13 +216,13 @@ While some advanced security controls like multi-factor authentication can incre
 
 The default configuration in this PAW guidance installs administrative tools on the PAW, but a jump server architecture can also be added if required.
 
-![Figure showing how reversing the control relationship and accessing user apps from an admin workstation gives the attacker no path to the targeted object](../media/privileged-access-workstations/PAWFig5.JPG)
+![Figure showing how reversing the control relationship and accessing user apps from an admin workstation gives the attacker no path to the targeted object](../media/Privileged-Access-Workstations/PAWFig5.JPG)
 
 This figure shows how reversing the control relationship and accessing user apps from an admin workstation gives the attacker no path to the targeted object. The user jump server is still exposed to risk so appropriate protective controls, detective controls, and response processes should still be applied for that internet-facing computer.
 
 This configuration requires administrators to follow operational practices closely to ensure that they don't accidentally enter administrator credentials into the user session on their desktop.
 
-![Figure showing how accessing an administrative jump server from a PAW adds no path for the attacker into the administrative assets](../media/privileged-access-workstations/PAWFig6.JPG)
+![Figure showing how accessing an administrative jump server from a PAW adds no path for the attacker into the administrative assets](../media/Privileged-Access-Workstations/PAWFig6.JPG)
 
 This figure shows how accessing an administrative jump server from a PAW adds no path for the attacker into the administrative assets. A jump server with a PAW allows in this case you to consolidate the number of locations for monitoring administrative activity and distributing administrative applications and tools. This adds some design complexity, but can simplify security monitoring and software updates if a large number of accounts and workstations are used in your PAW implementation. The jump server would need to be built and configured to similar security standards as the PAW.
 
@@ -234,11 +234,11 @@ These solutions typically use a flexible workflow to grant access and many have 
 
 Microsoft recommends using a PAW to access privilege management solutions. Access to these solutions should be granted only to PAWs. Microsoft does not recommend using these solutions as a substitute for a PAW because accessing privileges using these solutions from a potentially compromised user desktop violates the [clean source](./securing-privileged-access-reference-material.md) principle as depicted in the diagram below:
 
-![Diagram showing how Microsoft does not recommend using these solutions as a substitute for a PAW because accessing privileges using these solutions from a potentially compromised user desktop violates the clean source principle](../media/privileged-access-workstations/PAWFig7.JPG)
+![Diagram showing how Microsoft does not recommend using these solutions as a substitute for a PAW because accessing privileges using these solutions from a potentially compromised user desktop violates the clean source principle](../media/Privileged-Access-Workstations/PAWFig7.JPG)
 
 Providing a PAW to access these solutions enables you to gain the security benefits of both PAW and the privilege management solution, as depicted in this diagram:
 
-![Diagram showing how providing a PAW to access these solutions enables you to gain the security benefits of both PAW and the privilege management solution](../media/privileged-access-workstations/PAWFig8.JPG)
+![Diagram showing how providing a PAW to access these solutions enables you to gain the security benefits of both PAW and the privilege management solution](../media/Privileged-Access-Workstations/PAWFig8.JPG)
 
 > [!NOTE]
 > These systems should be classified at the highest tier of the privilege they manage and be protected at or above that level of security. These are commonly configured to manage Tier 0 solutions and Tier 0 assets and should be classified at Tier 0.

@@ -33,11 +33,11 @@ Cyber-attackers focus on privileged access to systems like Active Directory (AD)
 
 These factors necessitate building a modern security perimeter out of authentication and authorization identity controls, in addition to the traditional network perimeter strategy. A security perimeter here is defined as a consistent set of controls between assets and the threats to them. Privileged accounts are effectively in control of this new security perimeter, so it's critical to protect privileged access.
 
-![Diagram showing an organization's identity layer](../media/securing-privileged-access/PAW_LP_Fig2.JPG)
+![Diagram showing an organization's identity layer](../media/Securing-Privileged-Access/PAW_LP_Fig2.JPG)
 
 An attacker who gains control of an administrative account can use those privileges to increase their impact in the target organization as depicted below:
 
-![Diagram showing how an adversary that gains control of an administrative account can use those privileges to pursue their gain at the expense of the target organization](../media/securing-privileged-access/PAW_LP_Fig3.JPG)
+![Diagram showing how an adversary that gains control of an administrative account can use those privileges to pursue their gain at the expense of the target organization](../media/Securing-Privileged-Access/PAW_LP_Fig3.JPG)
 
 The illustration below depicts two paths:
 
@@ -48,7 +48,7 @@ The illustration below depicts two paths:
 
 * A "red" path, where privileged access occurs on a hardened device to reduce the risk of phishing and other web and email attacks.
 
-![Diagram showing the separate "path" for administration that the roadmap establishes to isolate privileged access tasks from high risk standard user tasks like web browsing and accessing email](../media/securing-privileged-access/PAW_LP_Fig4.JPG)
+![Diagram showing the separate "path" for administration that the roadmap establishes to isolate privileged access tasks from high risk standard user tasks like web browsing and accessing email](../media/Securing-Privileged-Access/PAW_LP_Fig4.JPG)
 
 ## Securing privileged access roadmap
 
@@ -74,7 +74,7 @@ Microsoft recommends that you follow this roadmap to secure privileged access ag
 
 Phase 1 of the roadmap is focused on quickly mitigating the most frequently used attack techniques of credential theft and abuse. Phase 1 is designed to be implemented in approximately 30 days and is depicted in this diagram:
 
-![Phase 1 diagram: 1. Separate admin and user account, 2. Just in Time local admin passwords, 3. Admin workstation stage 1, 4. Identity attack detection](../media/securing-privileged-access/PAW_LP_Fig6.JPG)
+![Phase 1 diagram: 1. Separate admin and user account, 2. Just in Time local admin passwords, 3. Admin workstation stage 1, 4. Identity attack detection](../media/Securing-Privileged-Access/PAW_LP_Fig6.JPG)
 
 ### 1. Separate accounts
 
@@ -100,7 +100,7 @@ As an initial security measure for those users with Azure Active Directory and t
 
 Phase 2 builds on the work done in phase 1 and is designed to be completed in approximately 90 days. The steps of this stage are depicted in this diagram:
 
-![Phase 2 diagram: 1. Windows Hello for Business / MFA, 2. PAW rollout, 3. Just in Time Privileges, 4. Credential Guard, 5. Leaked credentials, 6. Lateral movement vulnerability detection](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
+![Phase 2 diagram: 1. Windows Hello for Business / MFA, 2. PAW rollout, 3. Just in Time Privileges, 4. Credential Guard, 5. Leaked credentials, 6. Lateral movement vulnerability detection](../media/Securing-Privileged-Access/PAW_LP_Fig7.JPG)
 
 ### 1. Require Windows Hello for Business and MFA
 
@@ -137,7 +137,7 @@ Ensure that privileged access account holders are using their PAW for administra
 
 Phase 3 of the roadmap builds on the steps taken in Phases 1 and 2 to strengthen your security posture. Phase 3 is depicted visually in this diagram:
 
-![Phase 3: 1. Review RBAC, 2. Reduce attack surfaces, 3. Integrate logs with SEIM, 4. Leaked credentials automation](../media/securing-privileged-access/PAW_LP_Fig8.JPG)
+![Phase 3: 1. Review RBAC, 2. Reduce attack surfaces, 3. Integrate logs with SEIM, 4. Leaked credentials automation](../media/Securing-Privileged-Access/PAW_LP_Fig8.JPG)
 
 These capabilities will build on the steps from previous phases and move your defenses into a more proactive posture. This phase has no specific timeline and may take longer to implement, based on your individual organization.
 
